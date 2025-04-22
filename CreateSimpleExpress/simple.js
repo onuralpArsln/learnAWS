@@ -48,7 +48,14 @@ app.get('/second', (req, res) => {
     res.sendFile(__dirname + '/second.html');
 });
 
-// Sunucuyu başlat
+// Sunucuyu başlat lokal 
+/*
 app.listen(PORT, () => {
     console.log(`Sunucu çalışıyor http://localhost:${PORT}`);
+});
+*/
+
+// sunucu başlat her yere açık ama dışarı dinlemeyen bir sistemde sıkıntı olmaz 
+app.listen(3000, '0.0.0.0', () => {
+    console.log("Listening on port 3000");
 });
